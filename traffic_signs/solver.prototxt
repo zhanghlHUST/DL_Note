@@ -1,0 +1,27 @@
+# 网络配置文件的位置
+net: "net2.prototxt"
+
+# 采用 CPU 训练
+solver_mode: CPU
+
+# 训练的迭代次数共有 10000 次
+max_iter: 1000
+
+# 每500轮跑一遍，一遍100个迭代
+test_iter: 100
+test_interval: 500
+
+# 每 100 轮输出一次信息
+display: 100
+
+# 基础的学习率为 0.01， 还需要定义学习率的衰减形式
+base_lr: 0.01
+lr_policy: "inv"
+gamma: 0.0001
+power: 0.75
+# 动量的衰减率为 0.9， 正则项的权重为 0.0005
+momentum: 0.9
+weight_decay: 0.0005
+# 每 5000 轮保存一次进度
+snapshot: 200
+snapshot_prefix: "lenet"
